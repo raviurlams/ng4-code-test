@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <a [routerLink]="['/studentsList']" title="StudentList" class="btn btn-accent">Back To Dashboard</a>
+    </div>
+    <div class="row"><h3>Grade History</h3></div>
+    <div class="row">
+        <table class="table table-hover table-inverse">
+            <thead>
+                <tr>
+                    <th>Assignment Name</th>
+                    <th>Completion Date</th>
+                    <th>Due Date</th>
+                    <th>Max Score</th>
+                    <th>Score Earned</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of studentGradeData">
+                    <td>{{data.assignmentName}}</td>
+                    <td>{{data.completionDate | date:'medium'}}</td>
+                    <td>{{data.dueDate | date:'medium'}}</td>
+                    <td>{{data.maxScore}}</td>
+                    <td>{{data.scoreEarned}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

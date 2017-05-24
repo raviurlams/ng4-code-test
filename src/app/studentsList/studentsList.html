@@ -1,24 +1,33 @@
 <div class="container">
-    <table class="table table-hover table-inverse">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Grade</th>
-                <th>SchoolName</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let student of studentsList">
-                <td>
-                    <a [routerLink]="['/studentInfo', student.studentId]">{{student.studentId}}</a>
-                </td>
-                <td>{{student.firstName}}</td>
-                <td>{{student.lastName}}</td>
-                <td>{{student.grade}}</td>
-                <td>{{student.schoolName}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <h3>Students List</h3></div>
+    <div class="row">
+        <table class="table table-hover table-inverse">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Grade</th>
+                    <th>School Name</th>
+                    <th>History</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of studentsList">
+                    <td>
+                        {{student.studentId}}
+                    </td>
+                    <td>{{student.firstName}}</td>
+                    <td>{{student.lastName}}</td>
+                    <td>{{student.grade}}</td>
+                    <td>{{student.schoolName}}</td>
+                    <td>
+                        <a [routerLink]="['/enrollmentInfo', student.studentId]" title="Enrollment"><i class="fa fa-address-card" aria-hidden="true"></i></a>
+                        <a [routerLink]="['/gradeInfo', student.studentId]" title="Grade"><i class="fa fa-address-book-o" aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

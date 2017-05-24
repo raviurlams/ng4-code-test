@@ -7,12 +7,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { httpFactory } from "./http.factory";
-import { StudentInfo } from './studentInfo/app.studentInfo';
+import { EnrollmentInfo } from './enrollmentInfo/app.enrollmentInfo';
+import { GradeInfo } from './gradeInfo/app.gradeInfo';
 import { StudentsList } from './studentsList/studentsList';
 
 const appRoutes: Routes = [
   { path: 'studentsList', component: StudentsList },
-  { path: 'studentInfo/:studentId', component: StudentInfo },
+  { path: 'enrollmentInfo/:studentId', component: EnrollmentInfo },
+  { path: 'gradeInfo/:studentId', component: GradeInfo },
   {
     path: '**',
     redirectTo: 'studentsList'    
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     StudentsList,
-    StudentInfo
+    EnrollmentInfo,
+    GradeInfo
   ],
   imports: [
     BrowserModule,

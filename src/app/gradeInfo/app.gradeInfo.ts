@@ -3,12 +3,12 @@ import {Http} from "@angular/http";
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-student-info',
-  templateUrl: './app.studentInfo.html'  
+  selector: 'app-grade-info',
+  templateUrl: './app.gradeInfo.html'  
 })
-export class StudentInfo implements OnInit {
+export class GradeInfo implements OnInit {
     public studentId : any;
-    public studentEnrollmentData : any;
+    public studentGradeData : any;
     constructor(private http: Http,private activatedRoute: ActivatedRoute) {
 
     }
@@ -22,11 +22,11 @@ export class StudentInfo implements OnInit {
     }
 
     displayStudentEnrollment() {
-      this.http.get('EnrollmentHistory?studentId='+this.studentId)    
+      this.http.get('AssignmentHistory?studentId='+this.studentId)    
       .subscribe(
-                (enrollmentData: any) => {
-                console.log(enrollmentData)                    
-                    this.studentEnrollmentData = enrollmentData.json();
+                (gradeData: any) => {
+                    console.log(gradeData)                    
+                    this.studentGradeData = gradeData.json();
                 }
             );
   }
