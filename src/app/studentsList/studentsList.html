@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table table-hover table-inverse">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Grade</th>
+                <th>SchoolName</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of studentsList">
+                <td>
+                    <a [routerLink]="['/studentInfo', student.studentId]">{{student.studentId}}</a>
+                </td>
+                <td>{{student.firstName}}</td>
+                <td>{{student.lastName}}</td>
+                <td>{{student.grade}}</td>
+                <td>{{student.schoolName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
