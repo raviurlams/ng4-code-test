@@ -22,8 +22,9 @@
 5. Start the app in the browser
     ```
     ng build
+    ng serve
 
      ```
-     ng serve
+    
      
 6. http://localhost:4200
