@@ -10,14 +10,16 @@ import { httpFactory } from "./http.factory";
 import { EnrollmentInfo } from './enrollmentInfo/app.enrollmentInfo';
 import { GradeInfo } from './gradeInfo/app.gradeInfo';
 import { StudentsList } from './studentsList/studentsList';
+import { CompanyComponent } from './company/company.component';
 
 const appRoutes: Routes = [
   { path: 'studentsList', component: StudentsList },
+  { path: 'company', component: CompanyComponent },
   { path: 'enrollmentInfo/:studentId', component: EnrollmentInfo },
   { path: 'gradeInfo/:studentId', component: GradeInfo },
   {
     path: '**',
-    redirectTo: 'studentsList'    
+    redirectTo: 'company'    
   }
 ];
 
@@ -26,7 +28,8 @@ const appRoutes: Routes = [
     AppComponent,
     StudentsList,
     EnrollmentInfo,
-    GradeInfo
+    GradeInfo,
+    CompanyComponent
   ],
   imports: [
     BrowserModule,

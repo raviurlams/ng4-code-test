@@ -1,26 +1,19 @@
-# Ng4CodeTest
+#Household App
 
 1. git clone https://github.com/raviurlams/ng4-code-test.git
    
    open git bash on the project folder
-
-2. Install the the latest beta version of the angular CLI:
-    ```
-    npm install -g angular-cli@latest
-
-   ```
   
-3. Install the dependencies
+2. Install the dependencies
     ```
+    rm -rf node_modules dist tmp assets
+    ng build  
+
     npm install
     ```
-    
-4. Start the app in the browser
-    ```
-    ng build
-    ng serve
 
-     ```
-    
-     
-5. http://localhost:4200
+3. builds the app and run it on port 9000
+
+    ng serve ---port 9000
+
+    ```
