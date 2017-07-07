@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule,Http, XHRBackend, RequestOptions } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -11,6 +11,8 @@ import { EnrollmentInfo } from './enrollmentInfo/app.enrollmentInfo';
 import { GradeInfo } from './gradeInfo/app.gradeInfo';
 import { StudentsList } from './studentsList/studentsList';
 import { CompanyComponent } from './company/company.component';
+import { ValidationService } from './validation-service';
+import { ControlMessagesComponent } from './control-messages/control-messages.component';
 
 const appRoutes: Routes = [
   { path: 'studentsList', component: StudentsList },
@@ -29,12 +31,14 @@ const appRoutes: Routes = [
     StudentsList,
     EnrollmentInfo,
     GradeInfo,
-    CompanyComponent
+    CompanyComponent,
+    ControlMessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
@@ -42,7 +46,8 @@ const appRoutes: Routes = [
             provide: Http,
             useFactory: httpFactory,
             deps: [XHRBackend, RequestOptions]
-        }
+        },
+        ValidationService
     ],
   bootstrap: [AppComponent]
 })

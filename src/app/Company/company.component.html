@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="form-horizontal" role="form" name="companyDetailForm" novalidate>
+    <form class="form-horizontal" role="form" [formGroup]="companyDetailForm" novalidate (ngSubmit)="save(companyDetailForm.valid)">
         <div class="col-sm-12">
             <div class="col-sm-6">
                 <div class="form-group">
@@ -8,50 +8,57 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 required-field control-label" for="companyName">Company Name</label>
+                    <label class="col-sm-3 required-field control-label" for="CompanyName">Company Name</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="companyName" placeholder="Enter CompanyName" name="companyName"
-                        minlength="1" maxlength="70" autocomplete="off" required>
+                        <input type="text" class="form-control" id="CompanyName" placeholder="Enter CompanyName" name="CompanyName"
+                       formControlName="CompanyName" maxlength="70" autocomplete="off" required>
+                       <control-messages [control]="companyDetailForm.controls.CompanyName"></control-messages>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 required-field control-label" for="street1">Street</label>
+                    <label class="col-sm-3 required-field control-label" for="Street1">Street</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="street1" placeholder="Enter Street" name="street1"
-                        minlength="1" maxlength="70" autocomplete="off" required>
+                        <input type="text" class="form-control" id="Street1" placeholder="Enter Street" name="Street1"
+                         maxlength="70" autocomplete="off" formControlName="Street1"  required>
+                        <control-messages [control]="companyDetailForm.controls.Street1"></control-messages>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-3" for="hiddelflow">&nbsp;</label>
                     <div class="col-sm-9">
                         <input type="text" class="form-control" placeholder="Enter Street"
-                        minlength="1" maxlength="100" autocomplete="off" required>
+                        maxlength="100" formControlName="Street2" autocomplete="off">
+                         <control-messages [control]="companyDetailForm.controls.Street2"></control-messages>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 required-field control-label" for="city">City</label>
+                    <label class="col-sm-3 required-field control-label" for="City">City</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="city" placeholder="Enter City" name="city"
-                        minlength="1" maxlength="40" autocomplete="off" required>
+                        <input type="text" class="form-control" id="City" placeholder="Enter City" name="City"
+                        minlength="1" maxlength="40" autocomplete="off" formControlName="City" required>
+                        <control-messages [control]="companyDetailForm.controls.City"></control-messages>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 required-field control-label" for="state">State</label>
+                    <label class="col-sm-3 required-field control-label" for="State">State</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="state" placeholder="Enter City" name="state"
-                        minlength="1" maxlength="40" autocomplete="off" required>
+                        <input type="text" class="form-control" id="State" placeholder="Enter State" name="State"
+                        minlength="1" maxlength="40" autocomplete="off" formControlName="State"  required>
+                        <control-messages [control]="companyDetailForm.controls.State"></control-messages>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 required-field control-label" for="zip">Zip</label>
+                    <label class="col-sm-3 required-field control-label" for="Zip">Zip</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="zip" placeholder="Enter Zip" name="zip" minlength="1" maxlength="10" autocomplete="off" required>
+                        <input type="text" class="form-control" id="Zip" placeholder="Enter Zip" name="Zip" maxlength="10" formControlName="Zip" autocomplete="off" required>
+                        <control-messages [control]="companyDetailForm.controls.Zip"></control-messages>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 required-field control-label" for="country">Country</label>
+                    <label class="col-sm-3 required-field control-label" for="Country">Country</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="country" placeholder="Enter Country" name="country" minlength="1" maxlength="70" autocomplete="off" required>
+                        <input type="text" class="form-control" id="Country" placeholder="Enter Country" name="Country" minlength="1" maxlength="70" formControlName="Country" autocomplete="off" required>
+                        <control-messages [control]="companyDetailForm.controls.Country"></control-messages>
                     </div>
                 </div>
             </div>
@@ -62,42 +69,46 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 required-field control-label" for="tel-input">Phone Number</label>
+                    <label class="col-sm-3 required-field control-label" for="Telephone">Phone Number</label>
                     <div class="col-sm-9">
-                        <input type="tel" class="form-control" id="tel-input" placeholder="1-(555)-555-5555" name="tel-input" autocomplete="off" required>
+                        <input type="tel" class="form-control" id="Telephone" placeholder="1-(555)-555-5555" name="Telephone" autocomplete="off" formControlName="Telephone" required>
+                        <control-messages [control]="companyDetailForm.controls.Telephone"></control-messages>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 required-field control-label" for="fax-input">Fax</label>
+                    <label class="col-sm-3 required-field control-label" for="Fax">Fax</label>
                     <div class="col-sm-9">
-                        <input type="tel" class="form-control" id="fax-input" placeholder="1-(555)-555-5555" name="fax-input" autocomplete="off" required>
+                        <input type="tel" class="form-control" id="Fax" placeholder="1-(555)-555-5555" name="Fax" autocomplete="off" formControlName="Fax" required>
+                        <control-messages [control]="companyDetailForm.controls.Fax"></control-messages>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 required-field control-label" for="contactName">Contact Name</label>
+                    <label class="col-sm-3 required-field control-label" for="CompanyContact">Contact Name</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="contactName" placeholder="Enter CompanyName" name="contactName" minlength="1" maxlength="100" autocomplete="off" required>
+                        <input type="text" class="form-control" id="CompanyContact" placeholder="Enter CompanyName" name="CompanyContact" formControlName="CompanyContact" maxlength="100" autocomplete="off" required>
+                        <control-messages [control]="companyDetailForm.controls.CompanyContact"></control-messages>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-3 required-field control-label" for="email">Email</label>
+                    <label class="col-sm-3 required-field control-label" for="EmailCompany">Email</label>
                     <div class="col-sm-9">
-                        <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email" autocomplete="off" required>
+                        <input type="email" class="form-control" id="EmailCompany" placeholder="Enter Email" name="EmailCompany" formControlName="EmailCompany" autocomplete="off" required>
+                        <control-messages [control]="companyDetailForm.controls.EmailCompany"></control-messages>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-4 required-field control-label text-nowrap text-left-imp" for="logo">Use Company Logo</label>
+                    <label class="col-sm-4 required-field control-label text-nowrap text-left-imp" for="UseLogo">Use Company Logo</label>
                     <div class="col-sm-8 checkbox">
-                        <input type="checkbox" id="logo" placeholder="Enter Email" name="logo">
+                        <input type="checkbox" id="UseLogo" placeholder="Enter Email" name="UseLogo" formControlName="UseLogo">                        
+                        <control-messages [control]="companyDetailForm.controls.UseLogo"></control-messages>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-6">
-                        <div class="thumbnail img-app">
-                            <!-- <img src="/w3images/lights.jpg" alt="Lights" style=""> -->
+                    <!-- <div class="col-md-6">
+                        <div class="thumbnail img-app" formControlName="LogoFile">                            
                             <i class="fa fa-picture-o fa-5" aria-hidden="true"></i>
-                        </div>
-                    </div>
+                        </div>                       
+                    </div> -->
                 </div>               
                 <div class="form-group">
                     <div class="col-md-6">
@@ -108,6 +119,7 @@
                    Logo Size should be 225 X 100 Pixcels
                 </div>
             </div>
+            <button type="submit" [disabled]="companyDetailForm.invalid">save</button>
         </div>
     </form>
 </div>
